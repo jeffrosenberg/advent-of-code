@@ -1,0 +1,17 @@
+.DS_Store
+
+# Visual Studio Code
+.project
+.settings/
+.vscode/
+.classpath
+
+# Maven
+target/
+
+# IntelliJ
+*.iml
+.idea
+
+# Node
+node_modules/

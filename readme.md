@@ -1,0 +1,2 @@
+# Jeff Rosenberg's solutions to Advent of Code 2018
+These are my solutions to the problems for Advent of Code 2018 (https://adventofcode.com/2018). I will be focusing on using a test-driven development approach in several languages. To that end, I'll be making frequent commits to try to show my thought process as I write test, add code, and refactor.

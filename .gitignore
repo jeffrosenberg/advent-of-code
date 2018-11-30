@@ -15,3 +15,8 @@ target/
 
 # Node
 node_modules/
+
+# Visual Studio
+.vs/
+bin/
+obj/

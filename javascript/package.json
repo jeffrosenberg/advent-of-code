@@ -1,0 +1,23 @@
+{
+  "name": "advent-of-code-2018-javascript",
+  "version": "1.0.0",
+  "description": "Code for Advent of Code 2018 problems in JavaScript",
+  "main": "main.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "node main.js",
+    "test": "mocha test/**/*.js",
+    "watch": "mocha -w test/**/*.js"
+  },
+  "author": "Jeff Rosenberg",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "chalk": "^2.4.1"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
+}

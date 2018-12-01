@@ -23,10 +23,10 @@ namespace AdventOfCode.Tests
         [InlineData("123425", 4)]
         [InlineData("12131415", 4)]
         [InlineData("123123", 12)]
-        public void SumOf6WithStepNdiv2(string value, int expected)
+        public void CorrectlyCalculatesCaptchaWithStepNdiv2(string value, int expected)
         {
             int result = Captcha.GetCaptcha(value, value.Length / 2);
-            Assert.Equal(6, result);
+            Assert.Equal(expected, result);
         }
     }
 }

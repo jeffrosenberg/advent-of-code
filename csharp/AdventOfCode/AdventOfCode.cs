@@ -9,9 +9,12 @@ namespace AdventOfCode
 
         public static void Main(string[] args)
         {
-            string input = File.ReadAllText(puzzleInputPath + "/day01_2017/puzzleInput.txt");
+            // 2017-01
+            string input = File.ReadAllText(puzzleInputPath + "/2017/201701/puzzleInput.txt");
             int captchaResult = Captcha.GetCaptcha(input);
-            Console.WriteLine("Day 01 2017:");
+            Console.WriteLine("2017 Day 01:");
+            Console.WriteLine(captchaResult);
+            captchaResult = Captcha.GetCaptcha(input, input.Length / 2);
             Console.WriteLine(captchaResult);
         }
     }

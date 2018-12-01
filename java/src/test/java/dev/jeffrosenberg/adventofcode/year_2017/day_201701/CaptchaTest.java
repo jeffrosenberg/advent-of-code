@@ -1,11 +1,11 @@
-package dev.jeffrosenberg.adventofcode.day01_2017;
+package dev.jeffrosenberg.adventofcode.year_2017.day_201701;
 
 import static org.junit.Assert.assertEquals;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import dev.jeffrosenberg.adventofcode.day01_2017.Captcha;
+import dev.jeffrosenberg.adventofcode.year_2017.day_201701.Captcha;
 
 public class CaptchaTest {
   @Rule

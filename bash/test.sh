@@ -11,4 +11,4 @@ BASH_SRC_DIR="$currentDir/src"
 BASH_TEST_DIR="$currentDir/test"
 BATS="$BASH_TEST_DIR/lib/bats/bin/bats"
 
-"$BATS" "$BASH_TEST_DIR/day01_2017/captcha.bats"
+"$BATS" "$BASH_TEST_DIR/2017/201701/captcha.bats"

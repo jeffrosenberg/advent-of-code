@@ -1,4 +1,4 @@
-package dev.jeffrosenberg.adventofcode.day01_2017;
+package dev.jeffrosenberg.adventofcode.year_2017.day_201701;
 
 public class Captcha {
   public static int getCaptcha(String input) {

@@ -1,7 +1,7 @@
 const chai = require('chai');
 const assert = require('assert');
 const expect = chai.expect;
-const src = require('../../src/day01_2017/captcha');
+const src = require('../../../src/2017/201701/captcha');
 
 describe('day 01 2017', function() {
   it('should return 3 for an input of 1122, step 1', function() {

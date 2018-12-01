@@ -23,7 +23,7 @@ namespace AdventOfCode.Tests
                     new int[]    { 1, -2, 3, 1 })]
         public void ConvertsStringArrayToIntArray(string[] input, int[] expected)
         {
-            int[] result = Calibration.ConvertString(input);
+            int[] result = Calibration.ConvertStringArrayToInt(input);
             Assert.Equal(expected, result);
         }
     }

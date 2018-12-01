@@ -4,21 +4,24 @@ using System.Linq;
 
 namespace AdventOfCode
 {
-    public static class Calibration
+    public class Calibration
     {
-        public static int GetCalibration(IEnumerable<int> input)
+        public IEnumerable<int> Input { get; set; }
+
+        public Calibration() { }
+        public Calibration(IEnumerable<int> input)
         {
-            return input.Sum();
+            this.Input = input;
         }
 
-        public static int[] ConvertStringArrayToInt(IEnumerable<string> input)
+        public int GetCalibrationPart1()
         {
-            int[] result = new int[input.Count()];
-            for(var i = 0; i < input.Count(); i++)
+            if (this.Input == null)
             {
-                result[i] = Int32.Parse(input.ElementAt(i));
+                throw new InvalidOperationException("Input has not been set");
             }
-            return result;
+
+            return this.Input.Sum();
         }
     }
 }

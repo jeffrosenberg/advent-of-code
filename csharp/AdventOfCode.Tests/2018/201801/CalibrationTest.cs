@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Xunit;
 using AdventOfCode;
 using System.Collections.Generic;
@@ -12,10 +12,18 @@ namespace AdventOfCode.Tests
         [InlineData(new int[] { 1, 1, 1 }, 3)]
         [InlineData(new int[] { 1, 1, -2 }, 0)]
         [InlineData(new int[] { -1, -2, -3 }, -6)]
-        public void CorrectlyProvidesCalibrationResult(int[] input, int expected)
+        public void CorrectlyProvidesCalibrationResultForPart1(int[] input, int expected)
         {
-            int result = Calibration.GetCalibration(input);
+            Calibration calibration = new Calibration(input);
+            int result = calibration.GetCalibrationPart1();
             Assert.Equal(expected, result);
+        }
+
+        [Fact]
+        public void CalibrationThrowsErrorWithNoInput()
+        {
+            Calibration calibration = new Calibration();
+            Assert.Throws<InvalidOperationException>(() => calibration.GetCalibrationPart1());
         }
 
         [Theory]
@@ -25,7 +33,7 @@ namespace AdventOfCode.Tests
                     new int[] { 1, 1, -2 })]
         public void ConvertsStringArrayToIntArray(string[] input, int[] expected)
         {
-            int[] result = Calibration.ConvertStringArrayToInt(input);
+            int[] result = CalibrationHelper.ConvertStringArrayToInt(input);
             Assert.Equal(expected, result);
         }
     }

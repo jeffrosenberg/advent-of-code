@@ -20,10 +20,12 @@ namespace AdventOfCode
             // 2018-01
             string[] input201801 = 
                 File.ReadAllLines(puzzleInputPath + "/2018/201801/puzzleInput201801.txt");
-            int[] input201801int = Calibration.ConvertStringArrayToInt(input201801);
-            int calibrationResult = Calibration.GetCalibration(input201801int);
+            int[] input201801int = CalibrationHelper.ConvertStringArrayToInt(input201801);
+
+            Calibration calibration = new Calibration(input201801int);
+
             Console.WriteLine("2018 Day 01:");
-            Console.WriteLine(calibrationResult);
+            Console.WriteLine(calibration.GetCalibrationPart1());
         }
     }
 }

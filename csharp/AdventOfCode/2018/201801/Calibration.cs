@@ -10,5 +10,10 @@ namespace AdventOfCode
         {
             return input.Sum();
         }
+
+        public static int[] ConvertString(IEnumerable<string> input)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

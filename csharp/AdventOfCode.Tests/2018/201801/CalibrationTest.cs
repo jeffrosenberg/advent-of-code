@@ -9,6 +9,8 @@ namespace AdventOfCode.Tests
     {
         [Theory]
         [InlineData(new int[] { 1, -2, 3, 1 }, 3)]
+        [InlineData(new int[] { 1, 1, 1 }, 3)]
+        [InlineData(new int[] { 1, 1, -2 }, 0)]
         public void CorrectlyProvidesCalibrationResult(int[] input, int expected)
         {
             int result = Calibration.GetCalibration(input);

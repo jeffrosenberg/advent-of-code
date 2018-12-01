@@ -7,13 +7,12 @@ namespace AdventOfCode.Tests
 {
     public class CalibrationTest
     {
-        [Fact]
-        public void CorrectlyProvidesCalibrationTestCase1()
+        [Theory]
+        [InlineData(new int[] { 1, -2, 3, 1 }, 3)]
+        public void CorrectlyProvidesCalibrationResult(int[] input, int expected)
         {
-            int[] input = new int[] { 1, -2, 3, 1 };
-
             int result = Calibration.GetCalibration(input);
-            Assert.Equal(3, result);
+            Assert.Equal(expected, result);
         }
     }
 }

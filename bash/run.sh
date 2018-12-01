@@ -12,4 +12,6 @@ BASH_TEST_DIR="$currentDir/test"
 INPUT="$currentDir/../puzzle-input"
 
 echo "Day 01 2017:"
-"$BASH_SRC_DIR/day01_2017/captcha.sh" $(cat < $INPUT/day01_2017/puzzleInput.txt)
+input="$(cat < $INPUT/day01_2017/puzzleInput.txt)"
+"$BASH_SRC_DIR/day01_2017/captcha.sh" "$input"
+"$BASH_SRC_DIR/day01_2017/captcha.sh" "$input" ${#input}/2

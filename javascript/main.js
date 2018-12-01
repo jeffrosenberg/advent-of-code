@@ -15,5 +15,8 @@ fs.readFile(`${puzzleInputPath}/day01_2017/puzzleInput.txt`, 'utf8', function(er
 
     process.stdout.write('Day 01 2017:\n');
     process.stdout.write(chalk.green.bold(result) + '\n');
+    
+    result = day012017.getCaptcha(data, (data.length / 2));
+    process.stdout.write(chalk.blue.bold(result) + '\n');
   };
 });

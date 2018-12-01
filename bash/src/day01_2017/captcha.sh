@@ -1,12 +1,15 @@
 #!/bin/bash
 declare -i result;
+declare -i step;
 result=0
 i=0
 
 inputChars="$1"
-while [[ $i -lt ${#inputChars} ]]; do 
-  j=$((i + 1))
-  [[ $j -lt ${#inputChars} ]] || j=0
+step=${2:-"1"} # Use parameter $2 when passed, otherwise default to 1
+inputCharsLen=${#inputChars}
+
+while [[ $i -lt $inputCharsLen ]]; do 
+  j=$(( (i + $step) % $inputCharsLen ));
 
   currentChar=${inputChars:$i:1}
   nextChar=${inputChars:$j:1}

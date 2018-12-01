@@ -11,8 +11,12 @@ public class AdventOfCode {
   public static void main(String[] args) throws IOException {
     byte[] encoded = Files.readAllBytes(Paths.get(puzzleInputPath, "day01_2017/puzzleInput.txt"));
     String input = new String(encoded, java.nio.charset.StandardCharsets.UTF_8);
+
     int captchaResult = Captcha.getCaptcha(input);
     System.out.println("Day 01 2017:");
+    System.out.println(captchaResult);
+
+    captchaResult = Captcha.getCaptcha(input, (input.length())/2);
     System.out.println(captchaResult);
   }
 }

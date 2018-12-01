@@ -8,7 +8,7 @@ namespace AdventOfCode.Tests
     {
         [Theory]
         [InlineData("1122")]
-        public void InputOf1122ProducesSumOf3(string value)
+        public void SumOf3WithStep1(string value)
         {
             int result = Captcha.GetCaptcha(value);
             Assert.Equal(3, result);
@@ -16,7 +16,7 @@ namespace AdventOfCode.Tests
 
         [Theory]
         [InlineData("1111")]
-        public void InputOf1111ProducesSumOf4(string value)
+        public void SumOf4WithStep1(string value)
         {
             int result = Captcha.GetCaptcha(value);
             Assert.Equal(4, result);
@@ -24,7 +24,7 @@ namespace AdventOfCode.Tests
 
         [Theory]
         [InlineData("1234")]
-        public void InputOf1234ProducesSumOf0(string value)
+        public void SumOf0WithStep1(string value)
         {
             int result = Captcha.GetCaptcha(value);
             Assert.Equal(0, result);
@@ -32,10 +32,43 @@ namespace AdventOfCode.Tests
 
         [Theory]
         [InlineData("91212129")]
-        public void InputOf91212129ProducesSumOf9(string value)
+        public void SumOf9WithStep1(string value)
         {
             int result = Captcha.GetCaptcha(value);
             Assert.Equal(9, result);
+        }
+
+        [Theory]
+        [InlineData("1212")]
+        public void SumOf6WithStepNdiv2(string value)
+        {
+            int result = Captcha.GetCaptcha(value, value.Length / 2);
+            Assert.Equal(6, result);
+        }
+
+        [Theory]
+        [InlineData("1221")]
+        public void SumOf0WithStepNdiv2(string value)
+        {
+            int result = Captcha.GetCaptcha(value, value.Length / 2);
+            Assert.Equal(0, result);
+        }
+
+        [Theory]
+        [InlineData("123425")]
+        [InlineData("12131415")]
+        public void SumOf4WithStepNdiv2(string value)
+        {
+            int result = Captcha.GetCaptcha(value, value.Length / 2);
+            Assert.Equal(4, result);
+        }
+
+        [Theory]
+        [InlineData("123123")]
+        public void SumOf12WithStepNdiv2(string value)
+        {
+            int result = Captcha.GetCaptcha(value, value.Length / 2);
+            Assert.Equal(12, result);
         }
     }
 }

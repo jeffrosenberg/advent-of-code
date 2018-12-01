@@ -11,7 +11,7 @@ namespace AdventOfCode
             return input.Sum();
         }
 
-        public static int[] ConvertString(IEnumerable<string> input)
+        public static int[] ConvertStringArrayToInt(IEnumerable<string> input)
         {
             int[] result = new int[4];
             for(var i = 0; i < input.Count(); i++)

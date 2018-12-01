@@ -19,8 +19,10 @@ namespace AdventOfCode.Tests
         }
 
         [Theory]
-        [InlineData(new string[] { "+1", "-2", "+3", "+1" }, 
-                    new int[]    { 1, -2, 3, 1 })]
+        [InlineData(new string[] { "+1", "-2", "+3", "+1" },
+                    new int[] { 1, -2, 3, 1 })]
+        [InlineData(new string[] { "+1", "+1", "-2" },
+                    new int[] { 1, 1, -2 })]
         public void ConvertsStringArrayToIntArray(string[] input, int[] expected)
         {
             int[] result = Calibration.ConvertStringArrayToInt(input);

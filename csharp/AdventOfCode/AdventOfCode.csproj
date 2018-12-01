@@ -5,4 +5,8 @@
     <OutputType>Exe</OutputType>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="2018\" />
+    <Folder Include="2018\201801\" />
+  </ItemGroup>
 </Project>

@@ -13,7 +13,7 @@ namespace AdventOfCode
 
         public static int[] ConvertStringArrayToInt(IEnumerable<string> input)
         {
-            int[] result = new int[4];
+            int[] result = new int[input.Count()];
             for(var i = 0; i < input.Count(); i++)
             {
                 result[i] = Int32.Parse(input.ElementAt(i));

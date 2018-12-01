@@ -13,7 +13,12 @@ namespace AdventOfCode
 
         public static int[] ConvertString(IEnumerable<string> input)
         {
-            throw new NotImplementedException();
+            int[] result = new int[4];
+            for(var i = 0; i < input.Count(); i++)
+            {
+                result[i] = Int32.Parse(input.ElementAt(i));
+            }
+            return result;
         }
     }
 }

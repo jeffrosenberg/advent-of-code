@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace AdventOfCode
 {
@@ -7,9 +8,7 @@ namespace AdventOfCode
     {
         public static int GetCalibration(IEnumerable<int> input)
         {
-            int result = 0;
-            result = 3;
-            return result;
+            return input.Sum();
         }
     }
 }

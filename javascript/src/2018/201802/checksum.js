@@ -30,8 +30,21 @@ const getChecksumForLine = function(input) {
   return result;
 }
 
-const getChecksum = function(input) {
-  return 12;
+const getChecksum = function(inputs) {
+  let twos = 0;
+  let threes = 0;
+
+  for (let input of inputs) {
+    let result = getChecksumForLine(input);
+    if (result & HAS_EXACTLY_TWO) {
+      twos++;
+    }
+    if (result & HAS_EXACTLY_THREE) {
+      threes++;
+    }
+  }
+
+  return twos * threes;
 }
 
 module.exports.getChecksumForLine = getChecksumForLine;

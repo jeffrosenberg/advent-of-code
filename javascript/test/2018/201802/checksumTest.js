@@ -2,7 +2,7 @@ const chai = require('chai');
 const expect = chai.expect;
 const src = require('../../../src/2018/201802/checksum');
 
-describe('2018 day 02', function() {
+describe('2018 day 02 part 1', function() {
   it('should return a bitmask of 00 for an input of abcdef', function() {
     var result = src.getChecksumForLine('abcdef');
     expect(result).to.equal(0);

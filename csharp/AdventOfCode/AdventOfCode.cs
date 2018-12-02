@@ -26,6 +26,7 @@ namespace AdventOfCode
 
             Console.WriteLine("2018 Day 01:");
             Console.WriteLine(calibration.GetCalibrationPart1());
+            Console.WriteLine(calibration.GetCalibrationPart2());
         }
     }
 }

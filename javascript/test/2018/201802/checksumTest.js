@@ -51,4 +51,18 @@ describe('2018 day 02', function() {
     var result = src.getChecksum(input);
     expect(result).to.equal(12);
   });
+  
+  it('should return a checksum of 12 for the modified combined lines', function() {
+    var input = [
+      'eeefff',
+      'bababc',
+      'abbcde',
+      'abcccd',
+      'aabcdd',
+      'abcdee',
+      'ababab',
+    ];
+    var result = src.getChecksum(input);
+    expect(result).to.equal(16);
+  });
 });

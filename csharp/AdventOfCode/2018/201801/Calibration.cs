@@ -26,7 +26,27 @@ namespace AdventOfCode
 
         public int GetCalibrationPart2()
         {
-            return 2;
+            int i = 0;
+            int result = 0;
+            int size = this.Input.Count();
+            List<int> usedValues = new List<int> { 0 }; // Start with 0 already populated
+
+            while (true)
+            {
+                // Use modular arithmetic to allow this to continue
+                // working even as we increment `i` above `size`
+                result += Input.ElementAt(i++ % size);
+                if (usedValues.Contains(result))
+                {
+                    break;
+                }
+                else
+                {
+                    usedValues.Add(result);
+                }
+            }
+
+            return result;
         }
     }
 }

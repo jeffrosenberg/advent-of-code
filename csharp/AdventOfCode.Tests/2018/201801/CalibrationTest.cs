@@ -27,6 +27,15 @@ namespace AdventOfCode.Tests
         }
 
         [Theory]
+        [InlineData(new int[] { 1, -2, 3, 1 }, 2)]
+        public void CorrectlyProvidesCalibrationResultForPart2(int[] input, int expected)
+        {
+            Calibration calibration = new Calibration(input);
+            int result = calibration.GetCalibrationPart2();
+            Assert.Equal(expected, result);
+        }
+
+        [Theory]
         [InlineData(new string[] { "+1", "-2", "+3", "+1" },
                     new int[] { 1, -2, 3, 1 })]
         [InlineData(new string[] { "+1", "+1", "-2" },

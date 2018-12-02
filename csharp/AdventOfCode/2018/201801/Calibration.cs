@@ -23,5 +23,10 @@ namespace AdventOfCode
 
             return this.Input.Sum();
         }
+
+        public int GetCalibrationPart2()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

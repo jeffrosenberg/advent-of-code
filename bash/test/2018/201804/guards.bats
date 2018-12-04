@@ -25,6 +25,8 @@ setup() {
 }
 
 @test "2018 Day 04: guards_format_inputs sorts and formats" {
+  #Remove space from IFS to keep timestamps together
+  IFS=$'\t\n'
   result=( $(../src/2018/201804/guards_format_inputs.sh "./Temp/puzzleInput.txt") )
   expected=("1518-11-01 00:00" "Guard #10 begins shift"
             "1518-11-01 00:05" "falls asleep"

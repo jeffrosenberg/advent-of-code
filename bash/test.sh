@@ -5,10 +5,13 @@
 sourceDir="$( dirname "${BASH_SOURCE[0]}" )"
 pushd $sourceDir > /dev/null
 currentDir="$( pwd )"
-popd > /dev/null
 
 BASH_SRC_DIR="$currentDir/src"
 BASH_TEST_DIR="$currentDir/test"
 BATS="$BASH_TEST_DIR/lib/bats/bin/bats"
+pushd $BASH_TEST_DIR > /dev/null
 
 "$BATS" "$BASH_TEST_DIR/2017/201701/captcha.bats"
+
+popd > /dev/null
+popd > /dev/null

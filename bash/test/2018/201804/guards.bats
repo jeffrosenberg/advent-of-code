@@ -121,6 +121,13 @@ setup() {
   [[ "${result[23]}" == "${expected[23]}" ]]
 }
 
+@test "2018 Day 04: guards_final_results returns final results" {
+  ../src/2018/201804/guards_format_inputs.sh "./temp/puzzleInput.txt" | ../src/2018/201804/guards_parse_inputs.sh > ./temp/puzzleInputParsed.txt
+  run ../src/2018/201804/guards_count_sleep.sh "temp/puzzleInputParsed.txt" | ../src/2018/201804/guards_final_results.sh
+  [[ "${lines[0]}" == "ID of guard: 10" ]]
+  [[ "${lines[1]}" == "Minute most asleep: 24" ]]
+}
+
 # teardown() {
 #   rm -f ./Temp/puzzleInput.txt
 # }

@@ -123,9 +123,10 @@ setup() {
 
 @test "2018 Day 04: guards_final_results returns final results" {
   ../src/2018/201804/guards_format_inputs.sh "./temp/puzzleInput.txt" | ../src/2018/201804/guards_parse_inputs.sh > ./temp/puzzleInputParsed.txt
-  run ../src/2018/201804/guards_count_sleep.sh "temp/puzzleInputParsed.txt" | ../src/2018/201804/guards_final_results.sh
+  ../src/2018/201804/guards_count_sleep.sh "./temp/puzzleInputParsed.txt" > ./temp/counts.txt
+  run ../src/2018/201804/guards_final_results.sh "./temp/counts.txt"
   [[ "${lines[0]}" == "ID of guard: 10" ]]
-  [[ "${lines[1]}" == "Minute most asleep: 24" ]]
+  [[ "${lines[1]}" == "Minute most asleep: 00:24" ]]
 }
 
 # teardown() {

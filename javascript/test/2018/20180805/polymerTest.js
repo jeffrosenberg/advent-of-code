@@ -32,4 +32,14 @@ describe('2018 day 05', function() {
     var result = src.react('aabAAB');
     expect(result).to.equal('aabAAB');
   });
+
+  it('should return "dabCBAcaDA" from an input of "dabAcCaCBAcCcaDA"', function() {
+    var result = src.react('dabAcCaCBAcCcaDA');
+    expect(result).to.equal('dabCBAcaDA');
+  });
+
+  it('should return "dabCBAcaDA" from an input of "dabAcCaCBAcCcaDA"', function() {
+    var result = src.react('dabAcCaCBAcCcaDA');
+    expect(result).to.equal('dabCBAcaDA');
+  });
 });

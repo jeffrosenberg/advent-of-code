@@ -89,7 +89,36 @@ setup() {
   [[ "${result[9]}" == "${expected[5]}" ]]
   [[ "${result[10]}" == "${expected[8]}" ]]
   [[ "${result[11]}" == "${expected[11]}" ]]
+  [[ "${result[14]}" == "${expected[14]}" ]]
+}
+
+@test "2018 Day 04: guards_count_sleep produces correct output for multiple lines" {
+  echo '10 1518-11-01 00:05 00:10' > ./temp/puzzleInputParsed.txt
+  echo '99 1518-11-02 00:40 00:44' >> ./temp/puzzleInputParsed.txt
+  result=( $(cat "./Temp/puzzleInputParsed.txt" | ../src/2018/201804/guards_count_sleep.sh) )
+  expected=("10" "1518-11-01" "00:05" 
+            "10" "1518-11-01" "00:06" 
+            "10" "1518-11-01" "00:07" 
+            "10" "1518-11-01" "00:08" 
+            "10" "1518-11-01" "00:09" 
+            "99" "1518-11-02" "00:40" 
+            "99" "1518-11-02" "00:41" 
+            "99" "1518-11-02" "00:42" 
+            "99" "1518-11-02" "00:43")
+  [[ "${result[0]}" == "${expected[0]}" ]]
+  [[ "${result[1]}" == "${expected[1]}" ]]
+  [[ "${result[2]}" == "${expected[2]}" ]]
+  [[ "${result[3]}" == "${expected[3]}" ]]
+  [[ "${result[4]}" == "${expected[4]}" ]]
+  [[ "${result[9]}" == "${expected[5]}" ]]
+  [[ "${result[10]}" == "${expected[8]}" ]]
   [[ "${result[11]}" == "${expected[11]}" ]]
+  [[ "${result[14]}" == "${expected[14]}" ]]
+  [[ "${result[17]}" == "${expected[17]}" ]]
+  [[ "${result[20]}" == "${expected[20]}" ]]
+  [[ "${result[21]}" == "${expected[21]}" ]]
+  [[ "${result[22]}" == "${expected[22]}" ]]
+  [[ "${result[23]}" == "${expected[23]}" ]]
 }
 
 # teardown() {

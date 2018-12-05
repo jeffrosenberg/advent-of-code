@@ -127,6 +127,8 @@ setup() {
   run ../src/2018/201804/guards_final_results.sh "./temp/counts.txt"
   [[ "${lines[0]}" == "ID of guard: 10" ]]
   [[ "${lines[1]}" == "Minute most asleep: 00:24" ]]
+  [[ "${lines[2]}" == "ID of guard most asleep in a minute: 99" ]]
+  [[ "${lines[3]}" == "Minute most asleep: 00:45" ]]
 }
 
 # teardown() {

@@ -20,5 +20,5 @@ echo
 echo "2018 Day 04:"
 "$BASH_SRC_DIR/2018/201804/guards_format_inputs.sh" "$INPUT/2018/201804/puzzleInput201804.txt" | 
   "$BASH_SRC_DIR/2018/201804/guards_parse_inputs.sh" |
-  "$BASH_SRC_DIR/2018/201804/guards_count_sleep.sh" |
-  "$BASH_SRC_DIR/2018/201804/guards_final_results.sh"
+  "$BASH_SRC_DIR/2018/201804/guards_count_sleep.sh" > "$INPUT/2018/201804/counts201804.txt"
+  "$BASH_SRC_DIR/2018/201804/guards_final_results.sh" "$INPUT/2018/201804/counts201804.txt"

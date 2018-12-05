@@ -28,3 +28,17 @@ minutes=$(
 )
 
 echo "Minute most asleep: $minutes"
+
+guardId2=( $(
+  echo "$input" | 
+  cut -f 1,3 -d ' ' | # Consider both the guard ID and minutes fields
+  sort -k1,2 | # Sort the list
+  uniq -c | # Get a count of each unique ID
+  sort -k1 -nr | # Sort in descending order
+  head -n 1 | # Take the first (i.e. highest count)
+  awk '{$1=$1};1' | # Trim whitespace
+  cut -f 2,3 -d ' ' # Take the second field
+) )
+
+echo "ID of guard most asleep in a minute: ${guardId2[0]}"
+echo "Minute most asleep: ${guardId2[1]}"

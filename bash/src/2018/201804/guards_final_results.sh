@@ -17,7 +17,7 @@ echo "ID of guard: $guardId"
 
 minutes=$(
   echo "$input" | 
-  grep "^$guardId" < "${1:-/dev/stdin}" | # Filter to only a single guard
+  grep "^$guardId" | # Filter to only a single guard
   cut -f 3 -d ' ' | # Consider only the minutes field
   sort -k1 | # Sort the list
   uniq -c | # Get a count of each unique ID

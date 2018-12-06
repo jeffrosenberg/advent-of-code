@@ -37,9 +37,13 @@ describe('2018 day 05', function() {
     var result = src.react('dabAcCaCBAcCcaDA');
     expect(result).to.equal('dabCBAcaDA');
   });
-
-  it('should return "dabCBAcaDA" from an input of "dabAcCaCBAcCcaDA"', function() {
+  it('should return a length of 10 from an input of "dabAcCaCBAcCcaDA"', function() {
     var result = src.react('dabAcCaCBAcCcaDA');
-    expect(result).to.equal('dabCBAcaDA');
+    expect(result.length).to.equal(10);
+  });
+
+  it('should return "aabAABAA" from an input of "aabAABbBAaABbA"', function() {
+    var result = src.react('aabAABbBAaABbA');
+    expect(result).to.equal('aabAABAA');
   });
 });

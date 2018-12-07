@@ -6,6 +6,7 @@ import org.jgrapht.alg.interfaces.ShortestPathAlgorithm.*;
 import org.jgrapht.alg.interfaces.*;
 import org.jgrapht.alg.shortestpath.*;
 import org.jgrapht.graph.*;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -38,5 +39,9 @@ public class Instructions {
     if (!steps.containsEdge(vertex1, vertex2)) {
       steps.addEdge(vertex1, vertex2);
     }
+  }
+
+  public String getOutput() {
+    throw new NotImplementedException();
   }
 }

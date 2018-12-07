@@ -73,4 +73,21 @@ public class InstructionsTest {
     assertEquals(expected.vertexSet().toString(), result.vertexSet().toString());
     assertEquals(expected.edgeSet().toString(), result.edgeSet().toString());
   }
+
+  @Test
+  public void ExampleInstructionsProduceCorrectOutput() {
+    Instructions instructions = new Instructions();
+    instructions.parseInstruction("Step C must be finished before step A can begin.");
+    instructions.parseInstruction("Step C must be finished before step F can begin.");
+    instructions.parseInstruction("Step A must be finished before step B can begin.");
+    instructions.parseInstruction("Step A must be finished before step D can begin.");
+    instructions.parseInstruction("Step B must be finished before step E can begin.");
+    instructions.parseInstruction("Step D must be finished before step E can begin.");
+    instructions.parseInstruction("Step F must be finished before step E can begin.");
+
+    String expected = "CABDFE";
+    String result = instructions.getOutput();
+
+    assertEquals(expected, result);
+  }
 }

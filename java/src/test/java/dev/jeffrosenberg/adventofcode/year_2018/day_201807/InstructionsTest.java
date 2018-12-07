@@ -20,9 +20,11 @@ public class InstructionsTest {
     DirectedAcyclicGraph result = instructions.getSteps();
 
     DirectedAcyclicGraph expected = new DirectedAcyclicGraph<String, DefaultEdge>(DefaultEdge.class);
-    expected.addVertex("A");
     expected.addVertex("C");
+    expected.addVertex("A");
     expected.addEdge("C", "A");
-    assertEquals(expected, result);
+
+    assertEquals(expected.vertexSet().toString(), result.vertexSet().toString());
+    assertEquals(expected.edgeSet().toString(), result.edgeSet().toString());
   }
 }

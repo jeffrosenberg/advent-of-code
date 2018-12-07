@@ -35,3 +35,9 @@ data = fs.readFileSync(`${puzzleInputPath}/2018/201805/puzzleInput201805.txt`, '
 process.stdout.write('2018 Day 05:\n');
 result = _201805_polymer.react(data);
 process.stdout.write(chalk.green.bold(result.length) + '\n');
+
+let letters = 'abcdefghijklmnopqrstuvwxyz'.split(''); // Array of all letters
+for (letter of letters) {
+  re = new RegExp(letter, 'ig');
+  process.stdout.write(chalk.blue(`${letter}: ${_201805_polymer.react(data.replace(re, '')).length}`) + '\n');
+}

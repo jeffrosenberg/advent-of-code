@@ -6,8 +6,12 @@ import org.jgrapht.alg.interfaces.ShortestPathAlgorithm.*;
 import org.jgrapht.alg.interfaces.*;
 import org.jgrapht.alg.shortestpath.*;
 import org.jgrapht.graph.*;
+import org.jgrapht.traverse.BreadthFirstIterator;
+import org.jgrapht.traverse.GraphIterator;
+import org.jgrapht.traverse.TopologicalOrderIterator;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import java.util.Comparator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -42,6 +46,18 @@ public class Instructions {
   }
 
   public String getOutput() {
-    throw new NotImplementedException();
+    // Use a TopologicalOrderIterator to traverse the DAG in order
+    // In case of a tie, use a standard string comparator
+    TopologicalOrderIterator<String, DefaultEdge> iterator =
+            new TopologicalOrderIterator<>(steps, Comparator.comparing((String x) -> x));
+
+    // Traverse the DAG and store each vertex to a StringBuilder
+    // to output once traversal is completed
+    StringBuilder sb = new StringBuilder();
+    while (iterator.hasNext()) {
+      sb.append(iterator.next());
+    }
+
+    return sb.toString();
   }
 }

@@ -12,7 +12,16 @@ namespace AdventOfCode.Tests
         public void CorrectlyProvidesMetadataSumForPart1(int[] input, int expected)
         {
             NavigationNode rootNode = new NavigationNode(input);
-            int result = rootNode.GetMetadataSum();
+            int result = rootNode.GetMetadataSumPart1();
+            Assert.Equal(expected, result);
+        }
+
+        [Theory]
+        [InlineData(new int[] { 2, 3, 0, 3, 10, 11, 12, 1, 1, 0, 1, 99, 2, 1, 1, 2, }, 66)]
+        public void CorrectlyProvidesMetadataSumForPart2(int[] input, int expected)
+        {
+            NavigationNode rootNode = new NavigationNode(input);
+            int result = rootNode.GetMetadataSumPart2();
             Assert.Equal(expected, result);
         }
 

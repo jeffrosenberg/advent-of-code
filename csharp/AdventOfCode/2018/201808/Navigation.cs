@@ -47,9 +47,14 @@ namespace AdventOfCode
             return _input;
         }
 
-        public int GetMetadataSum()
+        public int GetMetadataSumPart1()
         {
-            return Metadata.Sum()+ ChildNodes.Sum(n => n.GetMetadataSum());
+            return Metadata.Sum() + ChildNodes.Sum(n => n.GetMetadataSumPart1());
+        }
+
+        public int GetMetadataSumPart2()
+        {
+            return Metadata.Sum() + ChildNodes.Sum(n => n.GetMetadataSumPart2());
         }
     }
 }

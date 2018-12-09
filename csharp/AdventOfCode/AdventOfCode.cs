@@ -38,7 +38,8 @@ namespace AdventOfCode
             NavigationNode rootNode = new NavigationNode(input201808int);
 
             Console.WriteLine("2018 Day 08:");
-            Console.WriteLine(rootNode.GetMetadataSum());
+            Console.WriteLine(rootNode.GetMetadataSumPart1());
+            Console.WriteLine(rootNode.GetMetadataSumPart2());
         }
 
         private static int[] ConvertStringToIntArray(string input)

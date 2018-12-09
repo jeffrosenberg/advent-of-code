@@ -54,7 +54,28 @@ namespace AdventOfCode
 
         public int GetMetadataSumPart2()
         {
-            return Metadata.Sum() + ChildNodes.Sum(n => n.GetMetadataSumPart2());
+            if (ChildNodes.Any())
+            {
+                int sum = 0;
+                foreach(int metadata in Metadata)
+                {
+                    int index = metadata - 1; // Per instructions
+
+                    if (index >= 0)
+                    {
+                        NavigationNode childNode = ChildNodes.ElementAtOrDefault(index);
+                        if (childNode != null)
+                        {
+                            sum += childNode.GetMetadataSumPart2();
+                        }
+                    }
+                }
+                return sum;
+            }
+            else
+            {
+                return Metadata.Sum();
+            }
         }
     }
 }

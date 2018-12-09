@@ -8,5 +8,9 @@
   <ItemGroup>
     <Folder Include="2018\" />
     <Folder Include="2018\201801\" />
+    <Folder Include="2018\201808\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="2018\201801 %28copy%29\CalibrationHelper.cs" />
   </ItemGroup>
 </Project>

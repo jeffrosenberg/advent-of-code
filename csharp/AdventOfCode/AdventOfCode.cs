@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace AdventOfCode
 {
@@ -18,7 +20,7 @@ namespace AdventOfCode
             Console.WriteLine(captchaResult);
 
             // 2018-01
-            string[] input201801 = 
+            string[] input201801 =
                 File.ReadAllLines(puzzleInputPath + "/2018/201801/puzzleInput201801.txt");
             int[] input201801int = CalibrationHelper.ConvertStringArrayToInt(input201801);
 
@@ -27,6 +29,27 @@ namespace AdventOfCode
             Console.WriteLine("2018 Day 01:");
             Console.WriteLine(calibration.GetCalibrationPart1());
             Console.WriteLine(calibration.GetCalibrationPart2());
+
+            // 2018-08
+            string input201808 =
+                File.ReadAllText(puzzleInputPath + "/2018/201808/puzzleInput201808.txt");
+            int[] input201808int = ConvertStringToIntArray(input201808);
+
+            NavigationNode rootNode = new NavigationNode(input201808int);
+
+            Console.WriteLine("2018 Day 08:");
+            Console.WriteLine(rootNode.GetMetadataSum());
+        }
+
+        private static int[] ConvertStringToIntArray(string input)
+        {
+            string[] inputSplit = input.Split(' ');
+            int[] result = new int[input.Count()];
+            for (var i = 0; i < inputSplit.Count(); i++)
+            {
+                result[i] = Int32.Parse(inputSplit.ElementAt(i));
+            }
+            return result;
         }
     }
 }

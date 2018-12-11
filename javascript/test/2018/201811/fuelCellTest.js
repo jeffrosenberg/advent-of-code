@@ -1,6 +1,6 @@
 const chai = require('chai');
 const expect = chai.expect;
-const src = require('../../../src/2018/20180811/fuelCell');
+const src = require('../../../src/2018/201811/fuelCell');
 
 describe('2018 day 11', function() {
   describe('calculate power by coordinate:', function() {

@@ -26,8 +26,27 @@ const powerByCoordinate = (x, y, serial) => {
 };
 
 const maxPowerBySerialNumber = (serial, gridHorizSize, gridVertSize) => {
-  return { x: 33, y: 45, power: powerByCoordinate(33, 45, serial), totalPower: 29, };
-}
+  let grid = [];
+
+  for (x = gridHorizSize; x > 0 ; x--) {
+    for (y = gridVertSize; y > 0 ; y--) {
+      let power = powerByCoordinate(x, y, serial);
+      let totalPower = 
+        grid.filter((item) => {
+          return item.x >= x && item.x <= x+2 && item.y >= y && item.y <= y+2;
+        }).reduce((total, pwr) => {
+          return total += pwr.power;
+        }, power);
+      grid.push({ x, y, power, totalPower });
+    }
+  }
+
+  let result = grid.reduce((maxPower, pwr) => {
+    return pwr.totalPower > maxPower.totalPower ? pwr : maxPower
+  }, { totalPower: 0});
+  
+  return result;
+};
 
 module.exports.powerByCoordinate = powerByCoordinate;
 module.exports.maxPowerBySerialNumber = maxPowerBySerialNumber;

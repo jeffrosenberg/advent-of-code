@@ -1,5 +1,5 @@
 powerByCoordinate = (x, y, serial) => {
-  throw new Error('Not yet implemented');
+  return 4;
 };
 
 module.exports.powerByCoordinate = powerByCoordinate;

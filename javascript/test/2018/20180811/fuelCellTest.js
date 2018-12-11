@@ -28,8 +28,11 @@ describe('2018 day 11', function() {
   describe('calculate power for entire grid:', function() {
     it('should return (33,45) from the grid with serial number 18', function() {
       let result = src.maxPowerBySerialNumber(18, 300, 300);
-      let expected = { x: 33, y: 45, };
-      expect(result).to.equal(expected);
+      let expected = { x: 33, y: 45, totalPower: 29, };
+      
+      expect(result.x).to.equal(expected.x);
+      expect(result.y).to.equal(expected.y);
+      expect(result.power).to.equal(expected.power);
     });
   });
 });

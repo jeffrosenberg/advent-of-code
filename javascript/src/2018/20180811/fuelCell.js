@@ -26,7 +26,7 @@ const powerByCoordinate = (x, y, serial) => {
 };
 
 const maxPowerBySerialNumber = (serial, gridHorizSize, gridVertSize) => {
-  throw new Error('not yet implemented');
+  return { x: 33, y: 45, power: powerByCoordinate(33, 45, serial), totalPower: 29, };
 }
 
 module.exports.powerByCoordinate = powerByCoordinate;

@@ -25,29 +25,30 @@ const powerByCoordinate = (x, y, serial) => {
   return result;
 };
 
-const maxPowerBySerialNumber = (serial, gridHorizSize, gridVertSize) => {
+const maxPowerBySerialNumber = (serial, gridHorizSize, gridVertSize, resultSize=3) => {
   let grid = [];
-  let result = { x: 0, y: 0, power: 0, totalPower: 0 };
+  let result = { x: 0, y: 0, power: 0, totalPower: 0, resultSize, };
+  let size = resultSize - 1; // For getting grid size, because the current row counts as 1
 
   for (x = gridHorizSize; x > 0 ; x--) {
     for (y = gridVertSize; y > 0 ; y--) {
       let power = powerByCoordinate(x, y, serial);
       grid.push({ x, y, power });
-      if (x <= (gridHorizSize-2) && y <= (gridVertSize-2)) {
+      if (x <= (gridHorizSize-size) && y <= (gridVertSize-size)) {
         let totalPower = 
           grid.reduce((total, item) => {
-            return total += ((item.y <= y+2 && item.y >= y) ? item.power : 0)
+            return total += ((item.y <= y+size && item.y >= y) ? item.power : 0)
           }, 0);
         if (totalPower > result.totalPower) {
-          result = { x, y, power, totalPower };
+          result = { x, y, power, totalPower, resultSize };
         }
       }
     }
-    if (x <= (gridHorizSize-2)) {
+    if (x <= (gridHorizSize-size)) {
       grid.splice(0, gridVertSize);
     }
   }
-  
+
   return result;
 };
 

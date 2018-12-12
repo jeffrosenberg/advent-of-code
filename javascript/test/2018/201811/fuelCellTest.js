@@ -36,8 +36,6 @@ describe('2018 day 11', function() {
     });
 
     it('should return (33,45) from the grid with serial number 18', function() {
-      this.timeout(0);
-
       let result = src.maxPowerBySerialNumber(18, 300, 300);
       let expected = { x: 33, y: 45, totalPower: 29, };
 
@@ -47,8 +45,6 @@ describe('2018 day 11', function() {
     });
 
     it('should return (21,61) from the grid with serial number 42', function() {
-      this.timeout(0);
-      
       let result = src.maxPowerBySerialNumber(42, 300, 300);
       let expected = { x: 21, y: 61, totalPower: 30, };
       

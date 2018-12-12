@@ -26,31 +26,34 @@ describe('2018 day 11', function() {
   });
 
   describe('calculate power for entire grid:', function() {
-    it('should return (1,4) from a 10x10 grid with serial number 10', function() {
+    it('should return (1,4,3) from a 10x10 grid with serial number 10', function() {
       let result = src.maxPowerBySerialNumber(10, 10, 10);
-      let expected = { x: 1, y: 4, totalPower: 16, };
+      let expected = { x: 1, y: 4, totalPower: 16, resultSize: 3, };
       
       expect(result.x).to.equal(expected.x);
       expect(result.y).to.equal(expected.y);
       expect(result.totalPower).to.equal(expected.totalPower);
+      expect(result.resultSize).to.equal(expected.resultSize);
     });
 
-    it('should return (33,45) from the grid with serial number 18', function() {
+    it('should return (33,45,3) from the grid with serial number 18', function() {
       let result = src.maxPowerBySerialNumber(18, 300, 300);
-      let expected = { x: 33, y: 45, totalPower: 29, };
+      let expected = { x: 33, y: 45, totalPower: 29, resultSize: 3, };
 
       expect(result.x).to.equal(expected.x);
       expect(result.y).to.equal(expected.y);
       expect(result.totalPower).to.equal(expected.totalPower);
+      expect(result.resultSize).to.equal(expected.resultSize);
     });
 
-    it('should return (21,61) from the grid with serial number 42', function() {
+    it('should return (21,61,3) from the grid with serial number 42', function() {
       let result = src.maxPowerBySerialNumber(42, 300, 300);
-      let expected = { x: 21, y: 61, totalPower: 30, };
+      let expected = { x: 21, y: 61, totalPower: 30, resultSize: 3, };
       
       expect(result.x).to.equal(expected.x);
       expect(result.y).to.equal(expected.y);
       expect(result.totalPower).to.equal(expected.totalPower);
+      expect(result.resultSize).to.equal(expected.resultSize);
     });
   });
 });

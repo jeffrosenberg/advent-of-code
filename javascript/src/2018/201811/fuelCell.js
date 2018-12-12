@@ -58,7 +58,16 @@ const maxPowerBySerialNumber = (serial, gridHorizSize, gridVertSize, resultSize=
 };
 
 const getMaxPower = (serial, gridHorizSize=300, gridVertSize=300, minResultSize=3, maxResultSize=3) => {
-  throw new Error('not yet implemented');
+  let result = { x: 0, y: 0, power: 0, totalPower: 0, resultSize: minResultSize }; // Always store the current max
+
+  for(size = minResultSize; size <= maxResultSize; size++) {
+    let currentResult = maxPowerBySerialNumber(serial, gridHorizSize, gridVertSize, size);
+    if (currentResult.totalPower > result.totalPower) {
+      result = currentResult;
+    }
+  }
+
+  return result;
 };
 
 module.exports.powerByCoordinate = powerByCoordinate;

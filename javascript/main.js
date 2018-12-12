@@ -46,5 +46,7 @@ process.stdout.write(chalk.grey('Output skipped to improve performance\n'));
 
 // Use the 2018 Day 11 puzzle input (which is a single number) to output the answer
 process.stdout.write('2018 Day 11:\n');
-result = _201811_fuelCell.maxPowerBySerialNumber(9995, 300, 300);
-process.stdout.write(chalk.green.bold(`(${result.x},${result.y}): ${result.totalPower}`) + '\n');
+result = _201811_fuelCell.getMaxPower(9995, 300, 300, 3, 3);
+process.stdout.write(chalk.green.bold(`(${result.x},${result.y},${result.resultSize}): ${result.totalPower}`) + '\n');
+result = _201811_fuelCell.getMaxPower(9995, 300, 300, 1, 300);
+process.stdout.write(chalk.blue.bold(`(${result.x},${result.y},${result.resultSize}): ${result.totalPower}`) + '\n');
